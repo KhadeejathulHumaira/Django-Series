@@ -1,0 +1,19 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block page_title %} {{ month|title }} Challenge 
+{%endblock %} 
+{% block css_files %}
+<link rel="stylesheet" href="{% static "challenges/monthchallenge.css" %}">
+{% endblock  %}
+
+
+{% block content %}
+{% include "./includes/header.html" %}
+<!-- Use filters and tags in the django -->
+<h1>{{ month|title }} Month</h1>
+{% if task is not None %}
+<h2>{{ task }}</h2>
+{% else %}
+<h2>There is no Challenge added yet!!!</h2>
+{% endif %} 
+{% endblock %}
